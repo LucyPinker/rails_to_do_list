@@ -9,11 +9,18 @@ require 'faker'
 
 puts "Cleaning the database"
 
-User.destroy_all!
+User.destroy_all
 
 10.times do
   user = User.create!(
   name: Faker::Name.name,
   email: Faker::Internet.email
+  )
+  user.save!
+
+  task = Task.create(
+    name: Faker::Hobby.activity,
+    status: rand(0..2),
+    user: user
   )
 end
