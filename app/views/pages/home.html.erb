@@ -1,2 +1,15 @@
-<h1>Pages#home</h1>
-<p>Testing testing 123</p>
+<h1>Homepage</h1>
+
+<table class="table table-bordered">
+  <tr>
+    <th scope="col">User</th>
+    <th scope="col">Number of Tasks</th>
+  </tr>
+  <% @users.each do |user|%>
+    <tr>
+      <td><%= user.name%></td>
+      <td><%= user.tasks.count%></td>
+      <td><%= link_to "View all your tasks", user_tasks_path(user) %></td>
+    </tr>
+  <% end%>
+</table>

@@ -18,9 +18,12 @@ User.destroy_all
   )
   user.save!
 
-  task = Task.create(
-    name: Faker::Hobby.activity,
-    status: rand(0..2),
-    user: user
-  )
+  rand(2..6).times do
+    task = Task.create(
+      name: Faker::Hobby.activity,
+      status: rand(0..2),
+      user: user
+    )
+    task.save!
+  end
 end
