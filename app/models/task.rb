@@ -6,4 +6,6 @@ class Task < ApplicationRecord
     doing: 1,
     done: 2
   }
+
+  validates :name, presence: true, length: { minimum: 6 }
 end

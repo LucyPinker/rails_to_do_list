@@ -60,6 +60,5 @@ gem 'faker'
 gem "simple_form", github: "heartcombo/simple_form"
 
 #Testing
-group :development, :test do
-  gem 'rspec-rails', ">= 3.9.0"
-end
+gem 'rspec-rails', group: [ :test ]
+gem 'rails-controller-testing', group: [ :test ]
