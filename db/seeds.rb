@@ -12,9 +12,10 @@ puts "Cleaning the database"
 User.destroy_all
 
 10.times do
+  name = Faker::Name.first_name
   user = User.create!(
-  name: Faker::Name.name,
-  email: Faker::Internet.email
+  name: name,
+  email: "#{name.downcase}@gmail.com"
   )
   user.save!
 

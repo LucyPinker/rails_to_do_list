@@ -1,15 +1,17 @@
-<h1>Homepage</h1>
+<div class="container-md">
+  <h1 class="display-1">Welcome to the to do list</h1>
 
-<table class="table table-bordered">
-  <tr>
-    <th scope="col">User</th>
-    <th scope="col">Number of Tasks</th>
-  </tr>
-  <% @users.each do |user|%>
+  <table class="table table-bordered">
     <tr>
-      <td><%= user.name%></td>
-      <td><%= user.tasks.count%></td>
-      <td><%= link_to "View all your tasks", user_tasks_path(user) %></td>
+      <th scope="col">User</th>
+      <th scope="col">Number of Tasks</th>
     </tr>
-  <% end%>
-</table>
+    <% @users.each do |user|%>
+      <tr>
+        <td><%= user.name%></td>
+        <td><%= user.tasks.count%></td>
+        <td><%= link_to "View all tasks", user_tasks_path(user), class:"btn btn-outline-primary" %></td>
+      </tr>
+    <% end%>
+  </table>
+</div>
